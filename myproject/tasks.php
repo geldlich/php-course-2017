@@ -16,6 +16,7 @@ echo " $z";
 	
 // */
 echo "<br>";
+echo "<br>";
 
 $z = 0;
 
@@ -26,14 +27,45 @@ echo " $z";
 echo "<br>";
 // 3
 
-$q = 0;
-$w = 3;
+
+
+echo "<br>";
+$q = (string) 0;
+$w = (string) 3;
+ 
 
 while ( $q <= 10000 ) {
-	if ( $q % 5 == 0 ){
-		echo "$q";
-		//$r = strripos($q, $w);
-		//echo " $q";
+	if ( (( $q % 5 ) > 0) && ( ($rez = strpos ($q, $w)) !== false)){
+		echo " $q";
+	}
+	++$q;
+}
+
+//4
+echo "<br>";
+echo "<br>";
+$r = 1;
+while ($r <= 3) {
+ 	echo rand (0, 100) . "<br>";
+ 	++$r;
+}
+
+//5
+echo "<br>";
+echo "<br>";
+for ($n = 35; $n <= 87; ++$n) {
+	if ((($n / 7) == 1 ) ||  (($n / 7) == 2 ) || (($n / 7) == 5 )){
+		echo " $n";
+	}
+}
+
+
+//6
+echo "<br>";
+echo "<br>";
+for ($n = 35; $n <= 87; ++$n) {
+	if ((($n / 7) == 1 ) ||  (($n / 7) == 2 ) || (($n / 7) == 5 )){
+		echo " $n";
 	}
 }
 
