@@ -1,5 +1,4 @@
 <?php
-
 $list = [];
 
 $handle = fopen('text.txt', 'r+');
@@ -10,8 +9,22 @@ while (($buffer = fgets($handle, 4096)) !== false) {
 
 }
 
-var_dump($list);
+//var_dump($list);
 
 fclose($handle);
-
 ?>
+<?php if (count($list) > 0): ?>
+  <table style="color: #5892D5">
+    <thead>
+        <?php foreach ($list as $row): array_map('htmlentities', $row); ?>
+    </thead>
+      <tbody>
+        <tr>
+          <td><?php echo implode('</td><td>', $row); ?></td>
+        </tr>
+        <?php endforeach; ?>
+      </tbody>
+  </table>
+<?php endif; ?>
+</body>
+</html>
